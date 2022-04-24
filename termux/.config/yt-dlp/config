@@ -28,12 +28,12 @@
 # --live-from-start
 
 # Force ipv4 or ipv6
-# --force-ipv4
+--force-ipv4
 # --force-ipv6
 
 # Use mpegts container for HLS
 # Better choice also the default
-# --hls-use-mpegts
+--hls-use-mpegts
 
 # Do not use single line for progress bar
 # Required if you want to get progress bar on notification with my termux-url-opener
