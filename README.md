@@ -2,7 +2,8 @@
 
 ## For Termux
 
-```pkg i android-tools binutils build-essential bzip2 clang curl ffmpeg file git make neofetch openjdk-17 openssh proot-distro python readline rust starship wget zip zstd
+```
+pkg i android-tools binutils build-essential bzip2 clang curl ffmpeg file git make neofetch openjdk-17 openssh proot-distro python readline rust starship wget zip zstd
 
 pip install --upgrade pip
 pip install --upgrade yt-dlp
