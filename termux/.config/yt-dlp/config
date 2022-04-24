@@ -1,0 +1,51 @@
+# Uncomment when default quality selection acts up
+# -f (bestvideo[width>=3840]/bestvideo[width>=2560]/bestvideo[width>=1920]/bestvideo[width>=1280]/bestvideo)+(bestaudio[asr>=48000]/bestaudio)/best
+
+# Copy last modified header?
+# --no-mtime 
+--mtime 
+
+# Do not overwrite
+# --no-overwrites
+
+# Embed all subs except live chat
+# --embed-subs 
+# --sub-langs all,-live_chat
+
+# Embed thumbnail
+# --embed-thumbnail 
+
+# Add metadata
+# --embed-metadata
+
+# Embeds chapters
+# --embed-chapters
+
+# Create mp4 from output
+# --merge-output-format mp4 
+
+# Get livestreams from start instead of current time
+# --live-from-start
+
+# Force ipv4 or ipv6
+# --force-ipv4
+# --force-ipv6
+
+# Use mpegts container for HLS
+# Better choice also the default
+# --hls-use-mpegts
+
+# Do not use single line for progress bar
+# Required if you want to get progress bar on notification with my termux-url-opener
+--newline
+
+# Correct faulty files, at least thats what ytdlp wiki says
+# never, warn, detect_or_warn, force
+--fixup force
+
+# FFmpeg settings
+# --prefer-ffmpeg 
+--ffmpeg-location '/data/data/com.termux/files/usr/bin'
+
+# Set output location
+-o '~/%(title)s.%(ext)s'
