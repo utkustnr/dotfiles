@@ -11,7 +11,7 @@ goto :second
 
 :second
 if "%~2" EQU "" (
-	set clipname="%dirname%%basename%_clip.mp4"
+	set clipname="%dirname%%basename%_bb.mp4"
 	goto :third
 	)
 if "%~2" NEQ "" (
@@ -20,12 +20,11 @@ if "%~2" NEQ "" (
 	)
 
 :third
-if "%~3" EQU "" set /p from="Cut from : " & goto :forth
-if "%~3" NEQ "" set from=%~3 & goto :forth
-
-:forth
-if "%~4" EQU "" set /p to="Cutting length : " & goto :process
-if "%~4" NEQ "" set to=%~4 & goto :process
+ffmpeg -ss 5 -t 2 -i %input% -vf "cropdetect" -f null - 2>&1| awk "/crop=/ {print $NF}" | awk "NR == 1" > %dirname%.tmp.txt
+sleep 2
+set /p crop=<%dirname%.tmp.txt
+del %dirname%.tmp.txt
 
 :process
-ffmpeg -i %input% -ss %from% -t %to% -async 1 %clipname%
+ffmpeg -i %input% -vf %crop% -c:a copy %clipname%
+pause

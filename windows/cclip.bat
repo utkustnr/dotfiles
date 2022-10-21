@@ -29,3 +29,4 @@ if "%~4" NEQ "" set to=%~4 & goto :process
 
 :process
 ffmpeg -i %input% -ss %from% -t %to% -c:v copy -c:a copy -async 1 %clipname%
+pause
