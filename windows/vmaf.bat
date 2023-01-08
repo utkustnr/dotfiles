@@ -2,7 +2,7 @@
 :vmaf
 set /p input="n_subsample : "
 set /p reference="Drag and drop reference video: "
-set /p modified="Drag and drop video: "
+set /p modified="Drag and drop encoded video: "
 cls
 
 :process

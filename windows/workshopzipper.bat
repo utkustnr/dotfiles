@@ -1,1 +1,1 @@
-for /d %%G in (*) do "7za.exe" a "%%G.zip" ".\%%G\*" -mx=9 -tzip
+for /d %%G in (*) do "7z.exe" a ".\%%G.zip" ".\%%G\*" -mx=9 -tzip
